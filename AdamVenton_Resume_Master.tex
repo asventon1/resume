@@ -1,0 +1,231 @@
+% this resume is based on examples by Matthew Boedicker, David Grant
+% Todd Miller, Rowan Nadon, Mark Galassi.
+%
+% You can generate a PDF file with "pdflatex KatherineMurry_Resume.tex"
+%
+% MASTER RESUME: this file intentionally contains every entry that has
+% come up as a candidate for the resume, including items trimmed from
+% the main one-page version. Copy this file and delete whatever isn't
+% relevant to a given application rather than editing this one down.
+
+
+% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author) http://mboedick.org
+% (c) 2003-2007 David J. Grant <davidgrant-at-gmail.com> http://www.davidgrant.ca
+% (c) 2007-2014 Todd C. Miller <Todd.Miller@sudo.ws> http://www.sudo.ws/todd
+% (c) 2019 Rowan Nadon
+% (c) 2020 Mark Galassi <mark@galassi.org>
+
+% This work is licensed under the Creative Commons Attribution-ShareAlike 3.0
+% Unported License. To view a copy of this license, visit
+% http://creativecommons.org/licenses/by-sa/3.0/ or send a letter to Creative
+% Commons, 171 Second Street, Suite 300, San Francisco, California, 94105, USA.
+
+\documentclass[letterpaper,11pt]{article}
+
+%-----------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[empty]{fullpage}
+\usepackage{color}
+\usepackage[letterpaper]{geometry}
+%\usepackage{hyperref}
+\definecolor{mygrey}{gray}{0.80}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\usepackage{xcolor}
+\usepackage[normalem]{ulem}
+\usepackage{enumitem}
+\setlist[itemize,1]{topsep=2pt, itemsep=5pt, parsep=0pt}
+\setlist[itemize,2]{topsep=2pt, itemsep=1.5pt, parsep=0pt}
+\usepackage{hyperref}
+\hypersetup{colorlinks,urlcolor=blue}
+%% or
+% \hypersetup{colorlinks=false,pdfborder=000}
+
+% hack into hyperref
+\makeatletter
+\DeclareUrlCommand\ULurl@@{%
+  \def\UrlFont{\ttfamily\color{blue}}%
+  \def\UrlLeft{\uline\bgroup}%
+  \def\UrlRight{\egroup}}
+\def\ULurl@#1{\hyper@linkurl{\ULurl@@{#1}}{#1}}
+\DeclareRobustCommand*\ULurl{\hyper@normalise\ULurl@}
+\makeatother
+
+
+% Adjust margins to 0.5in on all sides
+\iffalse
+\addtolength{\oddsidemargin}{-1.0in}
+\addtolength{\evensidemargin}{-1.0in}
+\addtolength{\textwidth}{2.0in}
+\addtolength{\topmargin}{-1.0in}
+\addtolength{\textheight}{2.0in}
+\fi
+
+\newlength{\lengthMargin}
+\setlength{\lengthMargin}{0.2in} % change this to control all margins
+
+\newlength{\widthMargin}
+\setlength{\widthMargin}{0.5in} % change this to control all margins
+
+\geometry{
+  top=\lengthMargin,
+  bottom=\lengthMargin,
+  left=\widthMargin,
+  right=\widthMargin
+}
+
+%-----------------------------------------------------------
+%Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\resheading}[1]{\vspace{6pt}{\large \colorbox{mygrey}{\begin{minipage}{\textwidth}{\textbf{#1 \vphantom{p\^{E}}}}\end{minipage}}}}
+\newcommand{\ressubheading}[4]{
+  \begin{tabular*}{7.0in}{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{#3} & \textit{#4} \\
+  \end{tabular*}\vspace{3pt}}
+%-----------------------------------------------------------
+
+
+\begin{document}
+
+
+\begin{tabular*}{7.5in}{l@{\extracolsep{\fill}}r}
+  {\Large \textbf{Adam Venton}} & 737-228-4362\\
+  \href{https://github.com/asventon1}{\color{blue}\uline{github.com/asventon1}} \quad $\vert$ \quad \href{https://www.linkedin.com/in/adam-venton-5b366b312/}{\color{blue}\uline{linkedin.com/in/adam-venton}} & asventon1@gmail.com\\
+\end{tabular*}
+
+\vspace{2pt}
+\hrule height 0.6pt
+\vspace{0.04in}
+
+\resheading{Education}
+\begin{itemize}
+\item
+  \ressubheading{University of Wisconsin-Madison}{Madison, WI}{4.0 GPA, Computer Science Major, Starting Grad School Fall 2027}
+        {September 2024 - May 2027}
+  \begin{itemize}
+    \resitem{Taken: Deep Learning for NLP, Intro to Algorithms, Machine Organization and Programming, Intro to AI, Intro to Computer Engineering, Intro to Discrete Mathematics}
+  \end{itemize}
+\end{itemize}
+
+\begin{itemize}
+\item
+  \ressubheading{McNeil High School}{Austin, TX}{5.4 weighted GPA, 1510 SAT}{2020 - 2024}
+  \begin{itemize}
+    \resitem{Enrolled in: Physics C, Calculus BC, Mobile Applications, and Digital Electronics}
+  \end{itemize}
+\end{itemize}
+
+\resheading{Relevant Experience}
+\begin{itemize}
+
+\item
+  \ressubheading{Extreme Engineering Solutions (X-ES)}{Verona, WI}{Embedded Software Engineering Co-op}{May 2026 - December 2026}
+  \begin{itemize}
+    \resitem{Authored Linux and VxWorks device trees for two new rugged embedded boards by cross-referencing hardware schematics, processor manuals, and device trees from similar existing boards.}
+    \resitem{Used those device trees to build and validate internal Buildroot-based Linux releases for both boards, integrating board-support configurations and testing extensively.}
+    \resitem{Produced customer-facing Gentoo Linux releases for both boards by debugging a legacy build pipeline, fixing broken API calls and migrating scripts from Python 2 to Python 3; authored an internal guide documenting the process for future engineers.}
+    \resitem{Additionally, validated a new release of X-ES Enterprise Linux (XEL), a RHEL-based OS distribution, by running the integration test suite and manually verifying command output and system logs against expected results, then updated the corresponding product manual.}
+  \end{itemize}
+
+\item
+  \ressubheading{Wisconsin Autonomous Vehicle Club}{Madison, WI}{Perception Lead}{January 2025 - present}
+  \begin{itemize}
+    \resitem{Rewrote lane segmentation (drivable area detection) for our autonomous car's perception stack in C++ using TensorRT; combined with teammates' object detection and lane line rewrites, contributed to a 142\% increase in framerate.}
+    \resitem{Leading a 10-20 member perception team building the vehicle's real-time computer vision pipeline using 3D stereo cameras.}
+    \resitem{The team placed 2nd of 10 in AutoDrive II for the past two years.}
+  \end{itemize}
+
+\item
+  \ressubheading{Undergraduate TA}{Madison, WI}{CS540: Intro to AI}{Spring Semester 2026}
+  \begin{itemize}
+    \resitem{Held weekly office hours, helping students work through homework assignments and understand topics ranging from linear regression and unsupervised learning to transformers and reinforcement learning.}
+  \end{itemize}
+
+\item
+  \ressubheading{Internship with the Institute for Computing in Research}{Austin, TX}{Intern}{July 2024}
+  \begin{itemize}
+    \resitem{Created a neural network to play chess under the direction of Los Alamos scientist
+          Mark Galassi.}
+    \resitem{Code: \ULurl{https://github.com/asventon1/chess2} \quad Paper: \ULurl{https://tinyurl.com/3spr2vk7}}
+  \end{itemize}
+
+\item
+    \ressubheading{Personal Projects}{}{My own creations (with videos for some and code for all)}{2017 - present}
+  \begin{itemize}
+    \resitem{
+        Google street view mesh generator:
+        \ULurl{https://github.com/asventon1/goondaMaps}
+        \break
+        \textit{Generates a 3D point cloud from a Google Street View panorama.}
+    }
+    \resitem{
+        Chess engine:
+        \ULurl{https://github.com/asventon1/chess}
+        \break
+        \textit{Engine uses the minimax algorithm for playing chess and Java's graphics engine for rendering.}
+    }
+    \resitem{
+        Stock prediction:
+        \ULurl{https://tinyurl.com/yjunk43r}
+        \break
+        \textit{Experiment using Google agentic AI to create an app to predict future stock prices.}
+    }
+    \resitem{
+        Fingers:
+        \ULurl{https://github.com/asventon1/fingers}
+        \break
+        \textit{Uses TensorFlow and a convolutional neural network to detect the number of fingers in a hand gesture.}
+    }
+    \resitem{
+        HEB slot getter:
+        \ULurl{https://github.com/asventon1/slot-getter}
+        \break
+        \textit{Checks the HEB grocery store website for curbside slots and notifies you if there is an open one.}
+    }
+    \resitem{
+        Hamster tracker:
+        \ULurl{https://github.com/asventon1/oreo}
+        \break
+        \textit{Makes use of an Arduino and proximity sensors to track and graph the activity of a hamster wheel.}
+    }
+    \resitem{
+        Metaballs:
+        \ULurl{https://github.com/asventon1/metaballs}
+        \break
+        \textit{Experiment with rendering metaballs.}
+    }
+  \end{itemize}
+
+\item
+  \ressubheading{Computer Science UIL}{Austin, TX}{Participant}{2022 - 2023}
+  \begin{itemize}
+    \resitem{3rd place in the individual written portion and 2nd place in the team programming portion.}
+  \end{itemize}
+
+\end{itemize}
+
+\resheading{Qualifications}
+\begin{itemize}
+\item Languages: Python, C, C++, Java, JavaScript, Bash
+\item Embedded \& Systems: Linux (Buildroot, Gentoo, RHEL), VxWorks, Device Trees, Serial Console, Arduino
+\item Tools: Git, Make, CMake
+\item ML/Computer Vision: NumPy, TensorFlow, PyTorch, TensorRT
+\end{itemize}
+
+\resheading{Writing}
+\begin{itemize}
+\item
+    {Here are some of my college essays if you want to see some of my writing}
+    \break
+    \ULurl{https://drive.google.com/drive/folders/165P2tlOFTcPWZYHtIjUyIKpu1tL4bHOP?usp=sharing}
+\end{itemize}
+
+%\resheading{Awards}
+%\begin{itemize}
+%\end{itemize}
+
+\end{document}
