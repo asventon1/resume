@@ -4,6 +4,9 @@ on:
   push:
   pull_request:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,3 +27,28 @@ jobs:
           path: |
             AdamVenton_Resume.pdf
             AdamVenton_Resume_Master.pdf
+
+      - name: Prepare Pages site
+        if: github.ref == 'refs/heads/main'
+        run: |
+          mkdir site
+          cp AdamVenton_Resume.pdf AdamVenton_Resume_Master.pdf site/
+          cat > site/index.html <<'HTML'
+          <!DOCTYPE html>
+          <html>
+          <head><title>Adam Venton - Resume</title></head>
+          <body>
+          <ul>
+          <li><a href="AdamVenton_Resume.pdf">AdamVenton_Resume.pdf</a></li>
+          <li><a href="AdamVenton_Resume_Master.pdf">AdamVenton_Resume_Master.pdf</a></li>
+          </ul>
+          </body>
+          </html>
+          HTML
+
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
