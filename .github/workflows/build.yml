@@ -1,0 +1,26 @@
+name: Build resume PDFs
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile LaTeX documents
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: |
+            AdamVenton_Resume.tex
+            AdamVenton_Resume_Master.tex
+
+      - name: Upload PDFs
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-pdfs
+          path: |
+            AdamVenton_Resume.pdf
+            AdamVenton_Resume_Master.pdf
